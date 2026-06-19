@@ -1,8 +1,8 @@
 import sys
 import os
 
-# Fix the path — go up one level from app/ to reach src/
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+# HuggingFace runs from repo root, src/ is directly accessible
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 
 import gradio as gr
 from icd_mapper import suggest_icd10, format_icd10_output
